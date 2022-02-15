@@ -1,0 +1,75 @@
+// These are my personal suggested eslint rules, this is a personal preference though.
+
+{
+  "ignorePatterns": ["*.js", "dist/*"],
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "no-multi-spaces": ["error"],
+    "semi": [2, "always"],                                                  // Warns when missing a semi colon at the end.
+    "lines-between-class-members": [                                        // Requires empty line between class members.
+      "error", 
+      "always", 
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "capitalized-comments": [                                               // Capitalisation of letters in comments.
+      "error", 
+      "always",
+      {
+        "ignorePattern": "await|retracted|lintignore"                       // Ignores statements that start with these words.
+      }
+    ],
+    "spaced-comment": ["error", "always"],                                  // Contrls spaces before comments.
+    "lines-around-comment": [                                               // Controls how line spaces should operate.
+      "error", 
+      { 
+        "beforeLineComment": true,                                          // We want lines before comments to make it clear what the comment is for.
+        "ignorePattern": "await|retracted|lintignore"                       // Ignores statements that start with these words.
+      }
+    ],                                      
+    "space-before-function-paren": ["error", "always"],                     // Functions to have spaces after function name and before paranthesis.
+    "quotes": ["error", "single", "avoid-escape"],                          // Quotes to be sinlge quotes where possible.
+    "indent": ["error", 2],                                                 // Indented in amounts of 2's or 4's.
+    "comma-dangle": ["error", "only-multiline"],                            // No trailing commas where unneeded.
+    "no-multiple-empty-lines": ["error", { "max": 1 }],                     // Disallows repeat empty lines, as this can interfere with git.
+    "@typescript-eslint/array-type": [                                      // Requires using either T[] or Array<T> for arrays
+      "error",
+      { "default": "generic" }
+    ],       
+    "@typescript-eslint/ban-ts-comment": "error",                           // Bans @ts-<directive> comments from being used or requires descriptions after directive
+    "@typescript-eslint/consistent-type-assertions": "error",               // Enforces consistent usage of type assertions.
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],    // Consistent with type definition either interface or type
+    "@typescript-eslint/explicit-function-return-type": "error",            // Require explicit return types on functions and class methods 		
+    "@typescript-eslint/explicit-module-boundary-types": "error",           // Require explicit return and argument types on exported functions' and classes' public class methods
+    "@typescript-eslint/member-delimiter-style": "error",                   // Require a specific member delimiter style for interfaces and type literals 	
+    "@typescript-eslint/member-ordering": "error",                          // Require a consistent member declaration order
+    "@typescript-eslint/method-signature-style": "error",                   // Enforces using a particular method signature syntax.
+    "@typescript-eslint/naming-convention": [                               // Enforces naames not to be set as complete random things.
+      "error", 
+      { "selector": "default", "format": ["PascalCase", "camelCase", "UPPER_CASE", "snake_case"]},
+      { "selector": "property", "format": null}                             // Properties don't have naming conventions due to JSON data needing to be strictly named.
+    ],
+    "@typescript-eslint/no-confusing-non-null-assertion": "error",          // Disallow non-null assertion in locations that may be confusing.
+    "@typescript-eslint/no-empty-interface": "error",                       // Disallow the declaration of empty interfaces.
+    "@typescript-eslint/no-explicit-any": "error",                          // Disallow usage of the any type.
+    "@typescript-eslint/no-extra-non-null-assertion": "error",              // Disallow extra non-null assertion.
+    "@typescript-eslint/no-for-in-array": "error",                          // Disallow iterating over an array with a for-in loop.
+    "@typescript-eslint/no-inferrable-types": "error",                      // Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean.
+    "@typescript-eslint/no-misused-new": "error",                           // Enforce valid definition of new and constructor.
+    "@typescript-eslint/no-unsafe-return": "error",                         // Disallows returning any from a function.
+    "@typescript-eslint/prefer-as-const": "error",                          // Prefer usage of as const over literal type.
+    "@typescript-eslint/restrict-template-expressions": "error",            // Enforce template literal expressions to be of string type.
+    "@typescript-eslint/typedef": "error",                                  // Requires type annotations to exist.
+    "@typescript-eslint/type-annotation-spacing": "error"                   // Require consistent spacing around type annotations.
+  }
+}

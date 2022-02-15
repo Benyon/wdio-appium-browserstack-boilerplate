@@ -1,0 +1,24 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "outDir": "dist",
+        "sourceMap": false,
+        "target": "es2021",
+        "module": "commonjs",
+        "removeComments": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "types": [
+            "node",
+            "webdriverio", 
+            "@wdio/jasmine-framework"
+        ],
+    },
+    "include": [
+        "**/*.ts"
+    ],
+    "exclude": [
+        "*.js",
+        "node_modules"
+    ]
+}

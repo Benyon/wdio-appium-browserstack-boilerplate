@@ -1,0 +1,17 @@
+# OSX
+.DS_Store
+
+# IDE
+.idea
+.vscode/
+
+# node.js
+node_modules/
+package-lock.json
+npm-debug.log
+dist/
+
+# custom
+*.log
+*.tmp
+/screenshots
